@@ -1,0 +1,1 @@
+export {defalte} from 'Button';
