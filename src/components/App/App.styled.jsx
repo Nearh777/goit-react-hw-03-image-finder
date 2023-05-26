@@ -6,3 +6,14 @@ display: grid;
   grid-gap: 16px;
   padding-bottom: 24px;
 `;
+
+// export const ToastContainerWrapp = styled.div`
+// position: "top-right",
+
+// hideProgressBar: false,
+// closeOnClick: true,
+// pauseOnHover: true,
+// draggable: true,
+// progress: undefined,
+// theme: "light",
+// `;

@@ -35,6 +35,7 @@ display: inline-block;
   width: 48px;
   height: 48px;
   border: 0;
+  background-color: #E4EEEE;
   background-image: url('https://image.flaticon.com/icons/svg/149/149852.svg');
   background-size: 40%;
   background-repeat: no-repeat;
@@ -53,6 +54,7 @@ position: absolute;
 width: 1px;
 height: 1px;
 padding: 0;
+
 overflow: hidden;
 clip: rect(0, 0, 0, 0);
 white-space: nowrap;
