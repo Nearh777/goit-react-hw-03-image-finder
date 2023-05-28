@@ -1,7 +1,7 @@
 import styled from '@emotion/styled';
 
 
-export const ImageGallery = styled.ul`
+export const ListImageGallery = styled.ul`
 display: grid;
   max-width: calc(100vw - 48px);
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));

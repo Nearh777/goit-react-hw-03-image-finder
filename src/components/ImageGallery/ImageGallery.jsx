@@ -1,17 +1,31 @@
-import { Component } from "react";
-import {ImageGalleryItem} from '../ImageGalleryItem/ImageGalleryItem'
-
-import {ImageGallery } from './ImageGallery.styled';
-
-export class Gallery extends Component  {
+import { Component } from 'react';
+import {ImageGalleryItem} from '../ImageGalleryItem/ImageGalleryItem';
 
 
-    render(){
+import { ListImageGallery } from './ImageGallery.styled';
 
-        return(
-<ImageGallery >
-<ImageGalleryItem />
-</ImageGallery>
-        )
-    }
+export class ImageGallery extends Component {
+  state = {
+    query: '',
+  };
+
+  
+  render() {
+    const { images } = this.props;
+    // , onImageClick
+
+    return (
+      <ListImageGallery>
+        {images.map((image) => (
+          <ImageGalleryItem
+          key={image.id}
+          src={image.webformatURL}
+          alt={image.tags}
+          largeImage={image.largeImageURL}
+        //   onClick={onImageClick}
+          />
+        ))}
+      </ListImageGallery>
+    );
+  }
 }

@@ -6,11 +6,11 @@ export class ImageGalleryItem extends Component {
 
 
     render() {
-
+      const { imageUrl, alt, onClick } = this.props;
 
         return(
 <GalleryItem>
-  <GalleryItemImg src="" alt="" />
+  <GalleryItemImg src={imageUrl} alt={alt} onClick={onClick} />
 </GalleryItem>
         )
 
