@@ -6,6 +6,7 @@ export class Loader extends Component {
   render() {
     return (
       <>
+      
         <Vortex
           visible={true}
           height="80"

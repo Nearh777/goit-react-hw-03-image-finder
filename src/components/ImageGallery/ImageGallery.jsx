@@ -16,12 +16,13 @@ export class ImageGallery extends Component {
 
     return (
       <ListImageGallery>
-        {images.map((image) => (
+
+        {images && images.map((e) => (
           <ImageGalleryItem
-          key={image.id}
-          src={image.webformatURL}
-          alt={image.tags}
-          largeImage={image.largeImageURL}
+          key={e.id}
+          src={e.webformatURL}
+          alt={e.tags}
+          largeImage={e.largeImageURL}
         //   onClick={onImageClick}
           />
         ))}
