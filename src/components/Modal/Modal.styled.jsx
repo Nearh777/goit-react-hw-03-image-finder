@@ -20,7 +20,7 @@ left: 50%;
 transform: translate(-50%, -50%);
 border-radius: 15px;
 
-width: 400px;
+width: 700px;
 height: auto;
 
 background-color: #f0f0f0;
