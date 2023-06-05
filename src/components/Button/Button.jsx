@@ -1,12 +1,16 @@
-import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { ButtonLoader } from './Button.styled';
 
 
 
-export class Button extends Component {
-    render() {
-      const { onClick, children } = this.props;
-  
-      return <ButtonLoader type="button" className="button" onClick={onClick}>{children}</ButtonLoader>;
-    }
-  }
+export const Button = ({ onNextFetch}) => {
+  return (
+    <ButtonLoader onClick={onNextFetch} type="button">
+      Load more
+    </ButtonLoader>
+  );
+};
+
+Button.propTypes = {
+  onNextFetch: PropTypes.func.isRequired,
+};

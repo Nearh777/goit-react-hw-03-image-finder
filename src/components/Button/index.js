@@ -1,1 +1,1 @@
-export {defalte} from 'Button';
+export * from './Button';

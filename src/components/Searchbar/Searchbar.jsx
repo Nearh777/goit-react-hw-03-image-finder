@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types';
 import { toast } from 'react-toastify';
 import { ImSearch } from 'react-icons/im';
 import {
@@ -9,69 +10,57 @@ import {
   Input,
 } from './Searchbar.styled';
 
-// import React from "react";
+
 
 export class Searchbar extends Component {
+  static propTypes = {
+    onSubmit: PropTypes.func.isRequired,
+  };
+
   state = {
     query: '',
   };
 
-  handleChange = ({target:{value}}) => {
-    this.setState({query: value})
-  }
-
-  // handleСhange = e => {
-  //   this.setState({ query: e.target.value.toLowerCase() });
-  // };
-
-  handleSubmit = e => {
-    e.preventDefault();
-    const { query } = this.state;
-    if (query.trim() === '') {
-      return toast('Введіть назву категорії!');
-    }
-    this.props.onSubmit(query);
-    this.setState({query: ''});
+  onChangeInput = e => {
+    this.setState({ query: e.currentTarget.value });
   };
 
-  // handleСhange = e => {
-  //   this.setState({text: e.currentTarget.value.toLowerCase()});
-  // };
+  onSubmitForm = e => {
+    e.preventDefault();
 
-  // handleSubmit = e => {
-  //   e.preventDefault();
-  //   const { query } = this.state;
-  //   if(query.trim() === '') {
-  //     return toast('Введіть назву категорії!');
-  //   }
+    const { onSubmit } = this.props;
+    const { query } = this.state;
 
-  //   this.props.onSubmit(query);
-  //   this.setState({onSubmit: ''});
-  // }
+    if (query.trim() === '') {
+      toast.error('Введіть назву категорії!');
+      return;
+    }
+
+    onSubmit(query);
+  };
 
   render() {
     const { query } = this.state;
 
     return (
       <Header>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={this.onSubmitForm}>
           <ButtonSearchForm type="submit">
-            <ButtonLabel>Search</ButtonLabel>
-            <ImSearch style={{ width: 25, height: 25 }} />
+          <ButtonLabel>Search</ButtonLabel>
+            <ImSearch size={25} />
           </ButtonSearchForm>
 
           <Input
+            
             type="text"
-            autocomplete="off"
+            autoComplete="off"
             autoFocus
+            placeholder="Пошук зображень і фотографій"
             value={query}
-            onChange={this.handleChange}
-            placeholder="Search images and photos"
+            onChange={this.onChangeInput}
           />
         </Form>
       </Header>
     );
   }
 }
-
-// onSubmit={this.handleSubmit}

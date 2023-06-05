@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 export const Header = styled.header`
 top: 0;
   left: 0;
+  margin-bottom: 10px;
   position: sticky;
   z-index: 1100;
   display: flex;
@@ -44,7 +45,7 @@ display: inline-block;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
   outline: none;
-  &&:hover {
+  &:hover {
     opacity: 1;
   }
 `;

@@ -1,18 +1,21 @@
-import { Component } from "react";
+
+import PropTypes from 'prop-types';
 import { GalleryItem, GalleryItemImg } from './ImageGalleryItem.styled.jsx'
 
 
-export class ImageGalleryItem extends Component {
 
 
-    render() {
-      const { imageUrl, alt, onClick } = this.props;
-
-        return(
-<GalleryItem>
-  <GalleryItemImg src={imageUrl} alt={alt} onClick={onClick} />
-</GalleryItem>
-        )
-
-    }
+export const ImageGalleryItem = ({ description, smallImage, largeImage, openModal }) => {
+  return (
+    <GalleryItem onClick={openModal}>
+      <GalleryItemImg src={smallImage} alt={description} data-large={largeImage} />
+    </GalleryItem>
+  );
 }
+
+ImageGalleryItem.prototype = {
+  description: PropTypes.string,
+  smallImage: PropTypes.string.isRequired,
+  largeImage: PropTypes.string.isRequired,
+  openModal: PropTypes.func.isRequired,
+};

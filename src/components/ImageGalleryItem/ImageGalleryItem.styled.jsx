@@ -1,18 +1,41 @@
 import styled from '@emotion/styled';
 
+
+
 export const GalleryItem = styled.li`
-  border-radius: 2px;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.2),
-    0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 2px 1px -1px rgba(0, 0, 0, 0.12);
+
+
+margin-bottom: 15px;
+
+border-radius: 15px;
+
+overflow: hidden;
+cursor: pointer;
+transform: scale(1);
+transition: transform 300ms cubic-bezier(0.17, 0.67, 0.83, 0.67);
+
+
 `;
 
 export const GalleryItemImg = styled.img`
+
 width: 100%;
-  height: 260px;
-  object-fit: cover;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  &:hover {
-    transform: scale(1.03);
-  cursor: zoom-in;
+height: 350px;
+object-fit: cover;
+transform: scale(1);
+transition: all 0.3s ease-in-out;
+&:hover {
+  transform: scale(1.05);
+}
+
+
+
+  // transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  // &:hover, focus {
+  //   transform: scale(1.03);
+  // cursor: zoom-in;
+  // }
+
+  
   }
 `;
